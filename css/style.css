@@ -1,33 +1,8 @@
-/* Full-screen logo as website background */
-body {
-    background-image: url('../images/logo.png'); /* The corrected path */
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain; /* This ensures the entire logo is visible */
-    background-attachment: fixed; /* Keeps the background in place while scrolling */
-}
-/* Optional: To improve readability of text on top of the logo */
-.hero, .product-section, .why-choose-section, .we-help-section, .popular-product, .testimonial-section, .blog-section {
-    background-color: rgba(255, 255, 255, 0.9); /* Current opacity is 0.9 */
-    border-radius: 8px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
-
-/* Optional: To improve readability of text on top of the logo */
-.hero, .product-section, .why-choose-section, .we-help-section, .popular-product, .testimonial-section, .blog-section {
-    background-color: rgba(255, 255, 255, 0.9); /* Adds a semi-transparent white background to content sections */
-    border-radius: 8px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
-
-
 /* Color variables for easy customization */
 :root {
-    --primary-color: #004d40;  /* Dark Teal */
-    --secondary-color: #64dd17; /* Lime Green */
-    --accent-color: #ffc107;   /* Amber */
+    --primary-color: #004d40;    /* Dark Teal */
+    --secondary-color: #64dd17;  /* Lime Green */
+    --accent-color: #ffc107;     /* Amber */
     --text-color: #333;
     --bg-color: #f4f4f4;
     --light-bg-color: #ffffff;
@@ -45,8 +20,22 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
+    background-image: url('../images/logo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-attachment: fixed;
 }
 
+/* To improve readability of text on top of the logo */
+.hero, .product-section, .why-choose-section, .we-help-section, .popular-product, .testimonial-section, .blog-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Main Header and Navigation */
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -62,12 +51,18 @@ header {
     padding: 1rem 0;
 }
 
-header .logo {
-    height: 30px;
+.brand-logo {
+    height: 50px; /* Adjusted to your specified size */
+    width: 100px; /* Adjusted to your specified size */
 }
 
 header h1 {
     font-size: 1.5rem;
+}
+
+.custom-navbar-nav .nav-link {
+    padding: 5px 15px !important; /* Decreased vertical padding */
+    font-size: 14px;
 }
 
 header nav ul {
@@ -170,32 +165,50 @@ footer {
 
 /* Custom size for feature icons */
 .feature .icon img {
-    height: 100px; /* Adjust this value to your desired size */
-    width: 200px; /* Ensures the aspect ratio is maintained */
+    height: 100px;
+    width: 200px;
 }
 
 /* Custom height for the image in the "Why Choose Us" section */
 .why-choose-section .img-wrap img {
-    height: 600px; /* Adjust this value to your desired height */
-    width: auto;   /* Keeps the aspect ratio proportional */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    height: 600px;
+    width: auto;
+    object-fit: cover;
 }
 
 /* Decrease the size of the logo in the navigation bar */
 .custom-navbar-cta img {
-    height: 40px; /* Adjust this value to your preferred size */
-    width: auto; /* Ensures the image keeps its correct proportions */
-    vertical-align: middle; /* Aligns the image nicely with other nav items */
+    height: 20px;
+    width: auto;
+    vertical-align: middle;
 }
 
 /* Decrease the size of all logos in the navigation bar */
 .custom-navbar img {
-    height: 100px; /* You can adjust this value to your preferred size */
-    width: 200px; /* This keeps the image proportional */
+    height: 50px;
+    width: 100px;
 }
 
 /* Increase the width of the hero section image */
 .hero-img-wrap img {
-    width: 800px; /* Adjust this value to your desired width */
-    height: 250px;   /* Maintains the image's aspect ratio */
+    width: 800px;
+    height: 250px;
+}
+
+/* Media query for screens smaller than 576px (mobile phones) */
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 2.0rem;
+    }
+    .hero-content p {
+        font-size: 1.0rem;
+    }
+}
+
+/* Basic styling for the image grid slider */
+.slider-imgs-grid img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
